@@ -72,7 +72,7 @@
     }
 
     async function getUserProfile() {
-      const profile = await liff.getProfile()
+      const profile = await liff.getUserProfile()
       document.getElementById("pictureUrl").src = profie.pictureUrl
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
