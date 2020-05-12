@@ -63,6 +63,13 @@
     }
 
     async function getFriendship() {
+      const friend = await liff.getFriendship()
+      document.getElementById("friendship").append(friend.friendFlag)
+      if (!friend.friendFlag) {
+        if (confirm("คุณยังไม่ได้เป็นเพื่อกับเรา จะเพิ่มเพื่อนเลยมะ")){
+          window.location = "https://line.me/R/ti/p/@ftl5662k"
+        }
+      }
     }
 
     async function sendMsg() {
@@ -74,6 +81,7 @@
           "packageId": 1
           }
         ])
+        alert("Message sent")
       }
     }
 
@@ -115,7 +123,7 @@
       getEnvironment()
       getUserProfile()
       getContext()
-      // getFriendship()
+      getFriendship()
       // createUniversalLink()
     }
     main()
